@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black_text_color">#3a3938</color>
+    <color name="paid_green">#108f47</color>
+    <color name="splash_background">#115da6</color>
+    <color name="splash_card_shaddow_color">#29000000</color>
+    <color name="edit_text_border_color">#e5e5e5</color>
+    <color name="light_grey">#D3D3D3</color>
+
+    <color name="tutorial_skip_button">#949da5</color>
+    <color name="overlay_dark_10">#1A000000</color>
+    <color name="homescreenmanu">#555555</color>
+    <color name="line">#ebebeb</color>
+    <color name="home_black_textcolor">#263238</color>
+    <color name="home_datetime_color">#9a9a9a</color>
+    <color name="home_login_button_color_bg">#1a115da6</color>
+    <color name="header_text_color">#323c45</color>
+    <color name="days_list_unselected">#676769</color>
+    <color name="tiny_dot_orange_color1">#fd7a51</color>
+    <color name="tiny_dot_orange_color2">#a75dfc</color>
+    <color name="tiny_dot_orange_color3">#febf4b</color>
+    <color name="tiny_dot_orange_color4">#4bd5fe</color>
+    <color name="tiny_dot_orange_color5">#115da6</color>
+    <color name="timetable_screen_background">#f4f7fa</color>
+    <color name="gary_background_color">#f0f0f0</color>
+    <color name="day_selected_color">#dbe8f6</color>
+    <color name="et_title_color">#9d9791</color>
+    <color name="booked_red">#D80B0B</color>
+
+
+</resources>
