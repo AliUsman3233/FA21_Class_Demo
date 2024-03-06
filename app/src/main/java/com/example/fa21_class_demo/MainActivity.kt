@@ -9,28 +9,68 @@ import com.example.fa21_class_demo.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var dataBinding: ActivityMainBinding
-    private var player: Boolean = true
+    private var player: Boolean = false
+
+    private val entertainedComponents: MutableList<Int> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
-        dataBinding.first.setOnClickListener {
-            if (player) {
-                dataBinding.firstchild.background = AppCompatResources.getDrawable(this, R.drawable.ic_baseline_check_24)
-            } else {
-                dataBinding.firstchild.background = AppCompatResources.getDrawable(this, R.drawable.ic_baseline_clear_24)
+        dataBinding.center.setOnClickListener {
+            if(!entertainedComponents.contains(R.id.center)) {
+                if (player) {
+                    dataBinding.centerchild
+                        .background =
+                        AppCompatResources.getDrawable(this, R.drawable.ic_baseline_check_24)
+                } else {
+                    dataBinding.centerchild.background =
+                        AppCompatResources.getDrawable(this, R.drawable.ic_baseline_clear_24)
+                }
+                switchPlayer()
+                entertainedComponents.add(R.id.center)
             }
-            switchPlayer()
         }
 
-        dataBinding.second.setOnClickListener {
+        dataBinding.middleLeft.setOnClickListener {
+            if(!entertainedComponents.contains(R.id.middle_left)) {
+
+                if (player) {
+                    dataBinding.middleLeftChild.background =
+                        AppCompatResources.getDrawable(this, R.drawable.ic_baseline_check_24)
+                } else {
+                    dataBinding.middleLeftChild.background =
+                        AppCompatResources.getDrawable(this, R.drawable.ic_baseline_clear_24)
+                }
+                switchPlayer()
+                entertainedComponents.add(R.id.middle_left)
+            }
+
+        }
+
+        dataBinding.middleRight.setOnClickListener {
             if (player) {
-                dataBinding.secondChild.background = AppCompatResources.getDrawable(this, R.drawable.ic_baseline_check_24)
+                dataBinding.middleRightChild.background =
+                    AppCompatResources.getDrawable(this, R.drawable.ic_baseline_check_24)
             } else {
-                dataBinding.secondChild.background = AppCompatResources.getDrawable(this, R.drawable.ic_baseline_clear_24)
+                dataBinding.middleRightChild.background =
+                    AppCompatResources.getDrawable(this, R.drawable.ic_baseline_clear_24)
             }
             switchPlayer()
+            entertainedComponents.add(R.id.middle_right)
+
+        }
+        dataBinding.topLeft.setOnClickListener {
+            if (player) {
+                dataBinding.topLeftChild.background =
+                    AppCompatResources.getDrawable(this, R.drawable.ic_baseline_check_24)
+            } else {
+                dataBinding.topLeftChild.background =
+                    AppCompatResources.getDrawable(this, R.drawable.ic_baseline_clear_24)
+            }
+            switchPlayer()
+            entertainedComponents.add(R.id.top_left)
+
         }
 
     }
