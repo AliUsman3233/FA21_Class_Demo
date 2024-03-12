@@ -210,5 +210,56 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+        <View
+            android:id="@+id/top_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/splash_background"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/top_left"
+            app:layout_constraintBottom_toBottomOf="@+id/top_left"
+            app:layout_constraintStart_toStartOf="@+id/top_left"
+            app:layout_constraintEnd_toEndOf="@+id/top_right"
+            />
+
+        <View
+            android:id="@+id/middle_line"
+
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:visibility="gone"
+
+            android:background="@color/splash_background"
+            app:layout_constraintTop_toTopOf="@+id/middle_left"
+            app:layout_constraintBottom_toBottomOf="@+id/middle_left"
+            app:layout_constraintStart_toStartOf="@+id/middle_left"
+            app:layout_constraintEnd_toEndOf="@+id/middle_right"
+            />
+
+        <View
+            android:id="@+id/bottom_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:visibility="gone"
+            android:background="@color/splash_background"
+            app:layout_constraintTop_toTopOf="@+id/bottom_left"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_left"
+            app:layout_constraintStart_toStartOf="@+id/bottom_left"
+            app:layout_constraintEnd_toEndOf="@+id/bottom_right"
+            />
+
+        <View
+            android:id="@+id/d_right_to_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_d_line"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/middle_left"
+            app:layout_constraintEnd_toEndOf="@+id/middle_right"
+            app:layout_constraintTop_toTopOf="@+id/top_middle"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_center"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
