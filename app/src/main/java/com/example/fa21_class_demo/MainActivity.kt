@@ -1,5 +1,6 @@
 package com.example.fa21_class_demo
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -81,6 +82,9 @@ class MainActivity : AppCompatActivity() {
            Toast.makeText(this, "No win yet",Toast.LENGTH_SHORT).show()
        } else {
            Toast.makeText(this, "Player $winner Wins",Toast.LENGTH_SHORT).show()
+           val loginIntent = Intent(this@MainActivity, LoginActivity::class.java).putExtra("name","Ali Usman")
+           startActivity(loginIntent)
+           finish()
        }
     }
 
