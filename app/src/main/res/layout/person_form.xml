@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Person"
+            android:textColor="@color/splash_background"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Name:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your name" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Email:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your email" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Contact Number:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your Contact Number" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Date Of Birth:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pDateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your date of birth" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Gender:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pGender"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your gender" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Address:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pAddress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your address" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CNIC:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pCnic"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your CNIC" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Religion:"
+            android:textColor="@color/splash_background"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pReligion"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your religion" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/saveBtn"
+            app:cardCornerRadius="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/splash_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Save Data"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

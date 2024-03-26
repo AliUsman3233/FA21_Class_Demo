@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FA21_Class_Demo</string>
+
+    <string name="hello_text">Welcome, Let\'s find out new services around you </string>
 </resources>

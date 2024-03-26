@@ -10,6 +10,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.example.fa21_class_demo.databinding.ActivityMainBinding
+import com.example.fa21_class_demo.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
