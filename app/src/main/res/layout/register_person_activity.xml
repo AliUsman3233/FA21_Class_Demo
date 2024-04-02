@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
+        <variable
+            name="person"
+            type="com.example.fa21_class_demo.person.model.Person" />
+        <import type="android.view.View"/>
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,15 +15,221 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintVertical_bias="0.0">
 
-            <include
-                android:id="@+id/personForm"
-                layout="@layout/person_form"
-                />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register Person"
+                    android:textColor="@color/splash_background"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Name:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/pFName"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:hint="Enter your first name"
+                        android:text="@={person.name.fname}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/pLName"/>
+
+                    <EditText
+                        android:id="@+id/pLName"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:hint="Enter your last name"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/pFName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@={person.name.lName}" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Email:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your email"
+                    android:text="@={person.email}" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Contact Number:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your Contact Number" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Date Of Birth:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/pDateOfBirth_day"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:hint="Enter your date of birth"
+                        android:text="@={person.dateOfBirth.day}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/pDateOfBirth_month"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                        android:id="@+id/pDateOfBirth_month"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:hint="Enter your date of birth"
+                        android:text="@={person.dateOfBirth.month}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/pDateOfBirth_day"
+                        app:layout_constraintEnd_toStartOf="@id/pDateOfBirth_year"/>
+
+
+                    <EditText
+                        android:id="@+id/pDateOfBirth_year"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:hint="Enter your date of birth"
+                        android:text="@={person.dateOfBirth.year}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/pDateOfBirth_month"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Gender:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your gender" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Address:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your address" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="CNIC:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pCnic"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your CNIC" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Religion:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pReligion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your religion" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/saveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/splash_background"
+                    android:visibility="@{person.email.length > 5 ? View.VISIBLE: View.GONE, default=gone}"
+                    app:cardCornerRadius="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Save Data"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         </ScrollView>
 
