@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.fa21_class_demo.MainActivity
+import com.example.fa21_class_demo.CoroutinesActivity
 import com.example.fa21_class_demo.R
 import com.example.fa21_class_demo.databinding.ActivityLoginBinding
 
@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
         }
         dataBinding.textContent.text = userName
         dataBinding.backButton.setOnClickListener {
-            val gameIntent = Intent(this@LoginActivity, MainActivity::class.java)
+            val gameIntent = Intent(this@LoginActivity, CoroutinesActivity::class.java)
             finish()
             startActivity(gameIntent)
         }

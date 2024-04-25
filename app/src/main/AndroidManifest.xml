@@ -14,7 +14,7 @@
         android:theme="@style/Theme.FA21_Class_Demo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".data_passing_activities.ui.FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,12 +23,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".login.LoginActivity" />
 
-        <activity android:name=".person.ui.PersonActivity"
+        <activity
+            android:name=".person.ui.PersonActivity"
             android:exported="true">
 
         </activity>
+        <activity android:name=".data_passing_activities.ui.SecondActivity" />
+
     </application>
 
 </manifest>

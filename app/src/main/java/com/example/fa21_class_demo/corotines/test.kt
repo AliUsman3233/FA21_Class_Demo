@@ -8,9 +8,7 @@ import kotlinx.coroutines.runBlocking
 
 fun main() {
 
-    val message = "I Love my Laptop"
-
-
+    val message = "I am a person"
     runBlocking {
         launch {
             println("Received Data - > ${getDataFromAPI()}")
