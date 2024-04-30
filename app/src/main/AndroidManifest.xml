@@ -14,7 +14,7 @@
         android:theme="@style/Theme.FA21_Class_Demo"
         tools:targetApi="31">
         <activity
-            android:name=".data_passing_activities.ui.FirstActivity"
+            android:name=".viewmodel_working.counter.ui.CounterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
