@@ -5,11 +5,9 @@
     <data>
 
         <variable
-            name="count"
-            type="Integer" />
-        <variable
-            name="startStopState"
-            type="Boolean" />
+            name="viewModel"
+            type="com.example.fa21_class_demo.viewmodel_working.counter.viewmodel.CounterViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +19,7 @@
             android:id="@+id/counterTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{count + ``}"
+            android:text="@{viewModel.counterLD.count + ``}"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -37,7 +35,8 @@
             android:layout_height="50dp"
             android:layout_margin="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@{startStopState ? `Stop` : `Start`}"
+            android:text="@{viewModel.startStopFlagLD ? `Stop` : `Start`}"
+            android:onClick="@{() -> viewModel.startStopCounterEvent()}"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
