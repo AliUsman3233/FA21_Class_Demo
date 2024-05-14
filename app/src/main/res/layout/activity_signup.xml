@@ -21,7 +21,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login Person"
+                    android:text="Register Person"
                     android:textColor="@color/splash_background"
                     android:textSize="24sp" />
 
@@ -60,10 +60,10 @@
 
 
                 <TextView
-                    android:id="@+id/signup_transition_button"
+                    android:id="@+id/login_transition_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="want to create an account?"
+                    android:text="Already have an account"
                     android:textColor="#2196F3"
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
@@ -78,8 +78,8 @@
             android:layout_height="50dp"
             android:layout_margin="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Login"
-            android:onClick="@{() -> viewmodel.login()}"
+            android:text="SignUp"
+            android:onClick="@{() -> viewmodel.signUp()}"
             />
 
 

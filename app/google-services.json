@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870045210760",
+    "project_id": "fa21classdemo",
+    "storage_bucket": "fa21classdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870045210760:android:02857218a55f63dca1673d",
+        "android_client_info": {
+          "package_name": "com.example.fa21_class_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVi3n8DoIjzBy90J2anxGuqOhDW8b6SFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

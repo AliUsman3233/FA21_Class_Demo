@@ -38,5 +38,17 @@
             android:text="@{viewModel.startStopFlagLD ? `Stop` : `Start`}"
             android:onClick="@{() -> viewModel.startStopCounterEvent()}"
             />
+
+        <Button
+            android:id="@+id/reset_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Reset"
+            android:onClick="@{() -> viewModel.resetCounter()}"
+            />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

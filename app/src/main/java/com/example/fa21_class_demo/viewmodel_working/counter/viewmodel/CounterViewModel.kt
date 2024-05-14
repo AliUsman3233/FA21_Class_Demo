@@ -4,8 +4,6 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.fa21_class_demo.viewmodel_working.counter.model.CounterUiModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -23,7 +21,6 @@ class CounterViewModel(application: Application) : AndroidViewModel(application)
     val startStopFlagLD: LiveData<Boolean> = startStopFlagMLD
 
     fun startStopCounterEvent() {
-
         Log.e("CounterViewModel", "startStopCounterEvent: this function is called")
         if (startStopFlagLD.value ?: false) {
             counterThread.cancel()
@@ -41,6 +38,12 @@ class CounterViewModel(application: Application) : AndroidViewModel(application)
             }
         }
         startStopFlagMLD.value = !(startStopFlagLD.value ?: false)
+    }
+
+    fun resetCounter() {
+        counterThread?.cancel()
+        counterMLD.value = CounterUiModel(count = 0)
+
     }
 
 

@@ -10,7 +10,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.example.fa21_class_demo.databinding.ActivityMainBinding
-import com.example.fa21_class_demo.login.LoginActivity
+import com.example.fa21_class_demo.authentication.ui.SignUpActivity
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Player $winner Wins", Toast.LENGTH_SHORT).show()
             val loginIntent =
-                Intent(this@MainActivity, LoginActivity::class.java).putExtra("name", "Ali Usman")
+                Intent(this@MainActivity, SignUpActivity::class.java).putExtra("name", "Ali Usman")
             startActivity(loginIntent)
             finish()
         }
