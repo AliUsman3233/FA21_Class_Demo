@@ -22,7 +22,7 @@ class PersonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this, R.layout.register_person_activity)
-        dataBinding.person = person
+//        dataBinding.person = person
         dataBinding.lifecycleOwner = this@PersonActivity
 
         GlobalScope.launch(Dispatchers.IO) {

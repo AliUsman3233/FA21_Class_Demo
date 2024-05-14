@@ -2,10 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+       <import type="android.view.View"/>
+
         <variable
-            name="person"
-            type="com.example.fa21_class_demo.person.model.Person" />
-        <import type="android.view.View"/>
+            name="viewmodel"
+            type="com.example.fa21_class_demo.authentication.viewmodel.PersonDetailsViewModel" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +16,7 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/uploadDetails"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Register Person"
+                    android:text="Person Detail"
                     android:textColor="@color/splash_background"
                     android:textSize="24sp" />
 
@@ -52,7 +53,7 @@
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:hint="Enter your first name"
-                        android:text="@={person.name.fname}"
+                        android:text="@={viewmodel.person.name.fname}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/pLName"/>
@@ -65,7 +66,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/pFName"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:text="@={person.name.lName}" />
+                        android:text="@={viewmodel.person.name.lName}" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -84,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Enter your email"
-                    android:text="@={person.email}" />
+                    android:text="@={viewmodel.person.email}" />
 
 
                 <TextView
@@ -99,7 +100,8 @@
                     android:id="@+id/pContactNumber"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="Enter your Contact Number" />
+                    android:hint="Enter your Contact Number"
+                    android:text="@={viewmodel.person.contactNumber}"/>
 
 
                 <TextView
@@ -118,7 +120,7 @@
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:hint="Enter your date of birth"
-                        android:text="@={person.dateOfBirth.day}"
+                        android:text="@={viewmodel.person.dateOfBirth.day}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/pDateOfBirth_month"
                         app:layout_constraintTop_toTopOf="parent"/>
@@ -128,7 +130,7 @@
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:hint="Enter your date of birth"
-                        android:text="@={person.dateOfBirth.month}"
+                        android:text="@={viewmodel.person.dateOfBirth.month}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toEndOf="@id/pDateOfBirth_day"
                         app:layout_constraintEnd_toStartOf="@id/pDateOfBirth_year"/>
@@ -139,7 +141,7 @@
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:hint="Enter your date of birth"
-                        android:text="@={person.dateOfBirth.year}"
+                        android:text="@={viewmodel.person.dateOfBirth.year}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toEndOf="@id/pDateOfBirth_month"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -161,7 +163,8 @@
                     android:id="@+id/pGender"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="Enter your gender" />
+                    android:hint="Enter your gender"
+                    android:text="@={viewmodel.person.gender}"/>
 
 
                 <TextView
@@ -176,7 +179,8 @@
                     android:id="@+id/pAddress"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="Enter your address" />
+                    android:hint="Enter your address"
+                    android:text="@={viewmodel.person.address}"/>
 
 
                 <TextView
@@ -191,7 +195,8 @@
                     android:id="@+id/pCnic"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="Enter your CNIC" />
+                    android:hint="Enter your CNIC"
+                    android:text="@={viewmodel.person.cnic}"/>
 
 
                 <TextView
@@ -206,32 +211,43 @@
                     android:id="@+id/pReligion"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="Enter your religion" />
+                    android:hint="Enter your religion"
+                    android:text="@={viewmodel.person.religion}"/>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/saveBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="@color/splash_background"
-                    android:visibility="@{person.email.length > 5 ? View.VISIBLE: View.GONE, default=gone}"
-                    app:cardCornerRadius="10dp">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/saveBtn"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:backgroundTint="@color/splash_background"-->
+<!--                    android:visibility="@{viewmodel.person.email.length > 5 ? View.VISIBLE: View.GONE, default=gone}"-->
+<!--                    app:cardCornerRadius="10dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Save Data"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:text="Save Data"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="20sp" />-->
 
-                </androidx.cardview.widget.CardView>
+<!--                </androidx.cardview.widget.CardView>-->
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </ScrollView>
+
+
+        <Button
+            android:id="@+id/uploadDetails"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Upload"
+            android:onClick="@{()->viewmodel.uploadPersonDetails()}"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

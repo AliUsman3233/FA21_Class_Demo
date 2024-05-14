@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register Person"
+            android:text="Person Detail"
             android:textColor="@color/splash_background"
             android:textSize="24sp" />
 
