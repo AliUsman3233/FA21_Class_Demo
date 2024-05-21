@@ -28,6 +28,7 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                 .addOnSuccessListener {
                     Log.e("LoginViewModel", "signUp: SignUp successfull")
                     _signUpResponseMLD.value = Response.success(s=Response.Status.Success, data = "${loginModel.email} is registered", m = "jsabcudhsio")
+//                    FirebaseAuth.getInstance().currentUser?.sendEmailVerification().addOnSuccessListener {  }
                 }.addOnFailureListener {
                     Log.e("TAG", "signUp: error ->  ${it.message}", )
                     Log.e("LoginViewModel", "signUp: SignUp Failed")

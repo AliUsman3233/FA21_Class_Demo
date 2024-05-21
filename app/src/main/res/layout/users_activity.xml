@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="adopter"
+            type="com.example.fa21_class_demo.authentication.adopter.PersonRecyclerAdopter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/custom_app_bar"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/personRV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/top_header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/person_row"
+            tools:itemCount="5"
+            />
+
+
+
+            <TextView
+                android:id="@+id/add_new_person_btn"
+                app:layout_constraintEnd_toEndOf="@+id/top_header"
+                app:layout_constraintTop_toTopOf="@+id/top_header"
+                app:layout_constraintBottom_toBottomOf="@+id/top_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Add new   "
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

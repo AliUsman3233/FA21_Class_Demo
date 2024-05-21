@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.fa21_class_demo.authentication.viewmodel.AuthViewModelNew" />
+        <import type="android.view.View"/>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login Person"
+                    android:textColor="@color/splash_background"
+                    android:textSize="24sp" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Email:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter your email"
+                    android:text="@={viewmodel.authModel.email}" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Password:"
+                    android:textColor="@color/splash_background"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/pContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="@={viewmodel.authModel.password}"
+                    android:hint="Enter your Password" />
+
+
+                <TextView
+                    android:id="@+id/signup_transition_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="want to create an account?"
+                    android:textColor="#2196F3"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/reset_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Login"
+            android:onClick="@{() -> viewmodel.login()}"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

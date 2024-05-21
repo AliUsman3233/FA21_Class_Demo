@@ -13,7 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class PersonDetailsViewModel(application: Application) : AndroidViewModel(application) {
 
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    var person: MutableLiveData<Person> = MutableLiveData()
+    var person: MutableLiveData<Person> = MutableLiveData(Person())
 
     private val _personUploadResponseMLD: MutableLiveData<Response<String?>> = MutableLiveData()
     val personUploadResponseMLD: LiveData<Response<String?>> = _personUploadResponseMLD
@@ -21,27 +21,52 @@ class PersonDetailsViewModel(application: Application) : AndroidViewModel(applic
     private val _personDetailResponseMLD: MutableLiveData<Response<Person?>> = MutableLiveData()
     val personDetailResponseLD: LiveData<Response<Person?>> = _personDetailResponseMLD
 
+
+    private val _personsResponseMLD: MutableLiveData<Response<List<Person?>?>> = MutableLiveData()
+    val personsResponseLD: LiveData<Response<List<Person?>?>> = _personsResponseMLD
+
     init {
-        fetchPersonDetails()
+//        fetchPersonDetails()
+        fetchAllPersons()
     }
 
     fun fetchPersonDetails() {
         _personDetailResponseMLD.value =
             Response.loading(s = Response.Status.Loading, m = "Loading.......")
 
-        db.collection("person").document("ali@gmail.com").get().addOnSuccessListener {
+        db.collection("person").document("ali1@gmail.com").get().addOnSuccessListener {
             _personDetailResponseMLD.value = Response.success(
                 s = Response.Status.Success,
                 data = it.toObject(Person::class.java),
                 m = "Failed to fetch data"
             )
-            person.value = it.toObject(Person::class.java)?: Person()
+            person.value = it.toObject(Person::class.java) ?: Person()
 
         }.addOnFailureListener {
             _personDetailResponseMLD.value = Response.failure(
                 s = Response.Status.Failure,
                 data = null,
                 m = "Failed to fetch data"
+            )
+        }
+    }
+
+
+    fun fetchAllPersons() {
+        _personsResponseMLD.value =
+            Response.loading(s = Response.Status.Loading, m = "Loading.......")
+
+        db.collection("person").get().addOnSuccessListener {
+            _personsResponseMLD.value = Response.success(
+                s = Response.Status.Success,
+                data = it.toObjects(Person::class.java),
+                m = "Persons list fetched successfully"
+            )
+        }.addOnFailureListener {
+            _personsResponseMLD.value = Response.failure(
+                s = Response.Status.Failure,
+                data = null,
+                m = "Failed to fetch persons list"
             )
         }
     }
