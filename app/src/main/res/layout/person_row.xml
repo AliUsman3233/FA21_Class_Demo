@@ -7,6 +7,10 @@
         <variable
             name="person"
             type="com.example.fa21_class_demo.person.model.Person" />
+
+        <variable
+            name="viewModel"
+            type="com.example.fa21_class_demo.authentication.viewmodel.PersonDetailsViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -109,6 +113,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/address" />
 
+
+                <Button
+                    android:id="@+id/tapButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="@{() -> viewModel.tapAction()}"
+                    android:text="Tap Me"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

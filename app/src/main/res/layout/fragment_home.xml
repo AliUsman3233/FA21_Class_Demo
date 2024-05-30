@@ -23,6 +23,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/booked_red"
                 android:text="Home Fragment" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

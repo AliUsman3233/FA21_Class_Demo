@@ -33,12 +33,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        lifecycleScope.launch(Dispatchers.IO) {
-            delay(3000)
-            withContext(Dispatchers.Main) {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSplashFragment())
-            }
-        }
+//
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            delay(3000)
+//            withContext(Dispatchers.Main) {
+//                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSplashFragment())
+//            }
+//        }
     }
 }

@@ -28,6 +28,7 @@
     <color name="day_selected_color">#dbe8f6</color>
     <color name="et_title_color">#9d9791</color>
     <color name="booked_red">#D80B0B</color>
+    <color name="green">#009688</color>
 
 
 </resources>

@@ -101,4 +101,8 @@ class PersonDetailsViewModel(application: Application) : AndroidViewModel(applic
 
     }
 
+    fun tapAction() {
+        Log.e("PersonDetailsViewModel", "tapAction: called", )
+    }
+
 }

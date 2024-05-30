@@ -30,7 +30,7 @@ class UsersActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this, R.layout.users_activity)
         personDetailsViewModel = ViewModelProviders.of(this).get(PersonDetailsViewModel::class.java)
-        personRecyclerAdopter = PersonRecyclerAdopter()
+        personRecyclerAdopter = PersonRecyclerAdopter(viewModel = personDetailsViewModel)
         setUpBinding()
         setupObservers()
 

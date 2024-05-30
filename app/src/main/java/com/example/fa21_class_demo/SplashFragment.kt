@@ -37,11 +37,11 @@ class SplashFragment : Fragment() {
 
 
     private fun goToHomePage() {
-        lifecycleScope.launch(Dispatchers.IO) {
-            delay(3000)
-            withContext(Dispatchers.Main) {
-                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
-            }
-        }
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            delay(3000)
+//            withContext(Dispatchers.Main) {
+//                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
+//            }
+//        }
     }
 }
